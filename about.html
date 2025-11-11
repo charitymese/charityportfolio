@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Charity Messe | Digital Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/background-images.css">
+
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3a1;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+        
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-link {
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .nav-link.active, .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+        
+        /* Page Header */
+        .page-header {
+         
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .page-header h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* About Content */
+        .about-content {
+            padding: 4rem 0;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .about-image-wrapper {
+            text-align: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .about-text h2 {
+            margin-top: 0;
+        }
+        
+        .interests-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .interests-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .interests-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        /* Quick Facts */
+        .quick-facts {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .quick-facts h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .quick-facts ul {
+            list-style: none;
+        }
+        
+        .quick-facts li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .quick-facts li:last-child {
+            border-bottom: none;
+        }
+        
+        .quick-facts strong {
+            color: var(--primary-color);
+        }
+        
+        /* Interests Icons */
+        .interest-icons {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .interest-item {
+            text-align: center;
+            padding: 1rem;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .interest-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                padding: 2rem 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-link {
+                display: block;
+                padding: 1rem;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .page-header {
+                padding: 7rem 0 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Charity Messe</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="cv.html" class="nav-link">CV</a></li>
+                <li><a href="reflection.html" class="nav-link">Reflection</a></li>
+                <li><a href="group-work.html" class="nav-link">Group Work</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header about-header">
+            <div class="container">
+                <h1>About Me</h1>
+                <p class="subtitle">Business Intelligence & Data Analytics Student | Strategic Thinker | Sports Enthusiast</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-wrapper">
+                        <img src="img/1.jpg" alt="Charity Messe" class="about-image">
+                        <p class="image-caption">Charity Messe - BIDA Student</p>
+                    </div>
+
+                    <div class="about-text">
+                        <h2>Hello, I'm Charity Messe</h2>
+                        <p>I'm a passionate and driven 20-year-old student pursuing a Bachelor of Science in Business Intelligence and Data Analytics at Botswana Accountancy College. I believe that data holds the key to solving complex problems and driving innovation in today's digital world.</p>
+                        
+                        <h3>My Background</h3>
+                        <p>Growing up in Botswana, I developed a keen interest in technology and problem-solving from an early age. This led me to pursue my current degree, where I'm learning to transform raw data into meaningful insights that can inform strategic business decisions. My academic journey has equipped me with skills in data analysis, visualization, and statistical modeling.</p>
+
+                        <h3>Interests & Passions</h3>
+                        <ul class="interests-list">
+                            <li><strong>Chess:</strong> I'm an avid chess player who enjoys the strategic thinking and problem-solving aspects of the game. Chess has taught me patience, foresight, and the importance of planning several moves ahead.</li>
+                            <li><strong>Football:</strong> As both a player and spectator, I love the teamwork, strategy, and excitement of football. I play regularly with friends and follow both local and international leagues.</li>
+                            <li><strong>Data Visualization:</strong> I'm fascinated by how complex data can be transformed into compelling visual stories that make information accessible and actionable.</li>
+                            <li><strong>Community Volunteering:</strong> I actively participate in community initiatives, particularly those focused on digital literacy and youth empowerment.</li>
+                            <li><strong>Reading:</strong> I enjoy reading both fiction and non-fiction, with a particular interest in books about technology trends, personal development, and African literature.</li>
+                            <li><strong>Music:</strong> I play traditional Botswana instruments and enjoy exploring how data analytics is transforming the music industry.</li>
+                        </ul>
+                        
+                        <!-- Interest Icons -->
+                        <div class="interest-icons">
+                            <div class="interest-item">
+                                <div class="interest-icon">
+                                    <i class="fas fa-chess-knight"></i>
+                                </div>
+                                <p>Chess</p>
+                            </div>
+                            <div class="interest-item">
+                                <div class="interest-icon">
+                                    <i class="fas fa-futbol"></i>
+                                </div>
+                                <p>Football</p>
+                            </div>
+                            <div class="interest-item">
+                                <div class="interest-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <p>Data Analytics</p>
+                            </div>
+                            <div class="interest-item">
+                                <div class="interest-icon">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <p>Volunteering</p>
+                            </div>
+                        </div>
+
+                        <h3>What I'm Currently Doing</h3>
+                        <p>I'm currently in my second year of the BIDA program, focusing on advanced data modeling and machine learning concepts. Outside of academics, I'm working on a personal project analyzing local sports statistics and volunteering with a youth coding initiative. I'm also preparing for an industrial attachment where I hope to apply my data analytics skills in a real-world business environment.</p>
+                        
+                        <p>My goal is to become a data analyst who can bridge the gap between technical data insights and strategic business decisions, particularly in industries that can benefit from data-driven approaches here in Botswana and across Africa.</p>
+                    </div>
+                </div>
+
+                <!-- Quick Facts Sidebar -->
+                <div class="quick-facts">
+                    <h3>Quick Facts</h3>
+                    <ul>
+                        <li><strong>Location:</strong> Francistown, Botswana</li>
+                        <li><strong>Education:</strong> Botswana Accountancy College</li>
+                        <li><strong>Specialization:</strong> Business Intelligence & Data Analytics</li>
+                        <li><strong>Languages:</strong> English, Setswana</li>
+                        <li><strong>Age:</strong> 20</li>
+                        <li><strong>Interests:</strong> Chess, Football, Data Visualization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Charity Messe. All rights reserved.</p>
+            <p>BSc Business Intelligence & Data Analytics | Botswana Accountancy College</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

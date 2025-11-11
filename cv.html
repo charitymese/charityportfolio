@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Charity Messe | Digital Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3a1;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-link {
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .nav-link.active, .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .page-header h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* CV Content */
+        .cv-content {
+            padding: 4rem 0;
+        }
+        
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .cv-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .cv-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .cv-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cv-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .institution {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .duration {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-item ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .cv-item li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Skills Section */
+        .skills-category {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--secondary-color);
+        }
+        
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--light-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Contact Info Sidebar */
+        .contact-sidebar {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        
+            top: 100px;
+        }
+        
+        .contact-sidebar h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .download-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.75rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 4px;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .download-btn:hover {
+            background-color: #3da98a;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                padding: 2rem 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-link {
+                display: block;
+                padding: 1rem;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .cv-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .page-header {
+                padding: 7rem 0 3rem;
+            }
+            
+            .contact-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Charity Messe</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="cv.html" class="nav-link active">CV</a></li>
+                <li><a href="reflection.html" class="nav-link">Reflection</a></li>
+                <li><a href="group-work.html" class="nav-link">Group Work</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Curriculum Vitae</h1>
+                <p class="subtitle">Business Intelligence & Data Analytics Student | Passionate about Data-Driven Solutions</p>
+            </div>
+        </section>
+
+        <section class="cv-content">
+            <div class="container">
+                <div class="cv-grid">
+                    <div class="cv-main">
+                        <div class="cv-section">
+                            <h2>Education</h2>
+                            <div class="cv-item">
+                                <h3>Bachelor of Science in Business Intelligence & Data Analytics</h3>
+                                <p class="institution">Botswana Accountancy College</p>
+                                <p class="duration">2023 - Present (Expected Graduation: 2028)</p>
+                                <p class="description">Current GPA: 3.8/4.0</p>
+                                <ul>
+                                    <li>Key Courses: Data Mining, Statistical Analysis, Database Management, Business Intelligence, Machine Learning Fundamentals</li>
+                                    <li>Academic Achievement: Dean's List for two consecutive semesters</li>
+                                    <li>Relevant Projects: Customer Segmentation Analysis, Sales Forecasting Model, Data Visualization Dashboard</li>
+                                </ul>
+                            </div>
+
+                            <div class="cv-item">
+                                <h3>Botswana General Certificate of Secondary Education (BGCSE)</h3>
+                                <p class="institution">Molefi Senior Secondary School</p>
+                                <p class="duration">2018 - 2022</p>
+                                <p class="description">Top performer in Mathematics and Computer Studies</p>
+                                <ul>
+                                    <li>Mathematics: A</li>
+                                    <li>Computer Studies: A</li>
+                                    <li>Science: B</li>
+                                    <li>English: B</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cv-section">
+                            <h2>Experience</h2>
+                            <div class="cv-item">
+                                <h3>Data Analysis Intern</h3>
+                                <p class="institution">Botswana Innovation Hub</p>
+                                <p class="duration">June 2024 - August 2024</p>
+                                <ul>
+                                    <li>Assisted in collecting, cleaning, and analyzing data from various sources to support business decisions</li>
+                                    <li>Created interactive dashboards using Tableau to visualize key performance indicators</li>
+                                    <li>Participated in team meetings to present findings and provide data-driven recommendations</li>
+                                    <li>Developed Python scripts to automate data processing tasks, reducing manual work by 30%</li>
+                                </ul>
+                            </div>
+
+                            <div class="cv-item">
+                                <h3>Volunteer Tutor</h3>
+                                <p class="institution">Youth Coding Initiative Botswana</p>
+                                <p class="duration">January 2024 - Present</p>
+                                <ul>
+                                    <li>Teach basic programming concepts to high school students in underserved communities</li>
+                                    <li>Develop curriculum materials focused on Python and data literacy</li>
+                                    <li>Mentor students on technology career paths and educational opportunities</li>
+                                </ul>
+                            </div>
+
+                            <div class="cv-item">
+                                <h3>Retail Assistant (Part-time)</h3>
+                                <p class="institution">Game Stores Botswana</p>
+                                <p class="duration">December 2022 - February 2023</p>
+                                <ul>
+                                    <li>Managed customer transactions and provided product information</li>
+                                    <li>Assisted in inventory management and stock tracking</li>
+                                    <li>Developed strong communication and problem-solving skills in a fast-paced environment</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cv-section">
+                            <h2>Projects</h2>
+                            <div class="cv-item">
+                                <h3>Retail Sales Analysis Dashboard</h3>
+                                <p class="duration">March 2024</p>
+                                <ul>
+                                    <li>Developed an interactive Power BI dashboard to analyze sales trends and customer behavior</li>
+                                    <li>Integrated data from multiple sources including Excel and SQL databases</li>
+                                    <li>Identified key insights that led to recommendations for optimizing product placement</li>
+                                </ul>
+                            </div>
+
+                            <div class="cv-item">
+                                <h3>Customer Segmentation Model</h3>
+                                <p class="duration">November 2023</p>
+                                <ul>
+                                    <li>Implemented K-means clustering algorithm in Python to segment customers based on purchasing behavior</li>
+                                    <li>Created visualizations to present findings to non-technical stakeholders</li>
+                                    <li>Model achieved 85% accuracy in predicting customer preferences</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cv-sidebar">
+                        <div class="contact-sidebar">
+                            <h3>Contact Information</h3>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p>charity.messe@student.bac.ac.bw</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p>+267 74 492 715</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p>Francistown, Botswana</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div>
+                                    <p>linkedin.com/in/charitymesse</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <p>github.com/charitymesse</p>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i> Download PDF CV
+                            </a>
+                        </div>
+
+                        <div class="cv-section">
+                            <h2>Skills</h2>
+                            <div class="skills-category">
+                                <h3>Technical Skills</h3>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">SQL</span>
+                                    <span class="skill-tag">R Programming</span>
+                                    <span class="skill-tag">Tableau</span>
+                                    <span class="skill-tag">Power BI</span>
+                                    <span class="skill-tag">Excel</span>
+                                    <span class="skill-tag">Data Visualization</span>
+                                    <span class="skill-tag">Statistical Analysis</span>
+                                    <span class="skill-tag">Machine Learning</span>
+                                    <span class="skill-tag">HTML/CSS</span>
+                                </div>
+                            </div>
+
+                            <div class="skills-category">
+                                <h3>Soft Skills</h3>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Problem Solving</span>
+                                    <span class="skill-tag">Critical Thinking</span>
+                                    <span class="skill-tag">Communication</span>
+                                    <span class="skill-tag">Teamwork</span>
+                                    <span class="skill-tag">Time Management</span>
+                                    <span class="skill-tag">Adaptability</span>
+                                    <span class="skill-tag">Leadership</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cv-section">
+                            <h2>Certifications</h2>
+                            <div class="cv-item">
+                                <h3>Google Data Analytics Professional Certificate</h3>
+                                <p class="institution">Google</p>
+                                <p class="duration">2024</p>
+                            </div>
+
+                            <div class="cv-item">
+                                <h3>Microsoft Power BI Desktop</h3>
+                                <p class="institution">Microsoft</p>
+                                <p class="duration">2023</p>
+                            </div>
+
+                            <div class="cv-item">
+                                <h3>Python for Data Science</h3>
+                                <p class="institution">DataCamp</p>
+                                <p class="duration">2023</p>
+                            </div>
+                        </div>
+
+                        <div class="cv-section">
+                            <h2>Languages</h2>
+                            <div class="skills-tags">
+                                <span class="skill-tag">English (Fluent)</span>
+                                <span class="skill-tag">Setswana (Native)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Charity Messe. All rights reserved.</p>
+            <p>BSc Business Intelligence & Data Analytics | Botswana Accountancy College</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

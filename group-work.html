@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Work Reflection - Charity Messe | Digital Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3a1;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-link {
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .nav-link.active, .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .page-header h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Group Work Content */
+        .group-work-section {
+            padding: 4rem 0;
+        }
+        
+        .tuckman-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .tuckman-stages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stage-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .stage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .stage-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .stage-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .stage-card:hover .stage-image img {
+            transform: scale(1.05);
+        }
+        
+        .stage-content {
+            padding: 1.5rem;
+        }
+        
+        .stage-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .stage-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .stage-intro {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .key-learning {
+            background-color: rgba(79, 195, 161, 0.1);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .key-learning strong {
+            color: var(--secondary-color);
+        }
+        
+        /* Reflection Section */
+        .reflection-section {
+            background-color: var(--light-color);
+            padding: 4rem 0;
+            margin-top: 3rem;
+        }
+        
+        .reflection-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .reflection-content h2 {
+            text-align: center;
+        }
+        
+        .reflection-content h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                padding: 2rem 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-link {
+                display: block;
+                padding: 1rem;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header {
+                padding: 7rem 0 3rem;
+            }
+            
+            .tuckman-stages {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Charity Messe</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="cv.html" class="nav-link">CV</a></li>
+                <li><a href="reflection.html" class="nav-link">Reflection</a></li>
+                <li><a href="group-work.html" class="nav-link active">Group Work</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Group Work Reflection</h1>
+            <p class="subtitle">Analyzing team dynamics through Tuckman's stages of group development</p>
+        </div>
+    </section>
+
+    <main class="container group-work-section">
+        <div class="tuckman-intro">
+            <h2>Tuckman's Stages of Group Development</h2>
+            <p>This reflection analyzes my experience in a semester-long data analytics project group, using Tuckman's model to understand how our team evolved through different stages of development.</p>
+        </div>
+
+        <div class="tuckman-stages">
+            <!-- Forming Stage -->
+            <div class="stage-card">
+                <div class="stage-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Forming stage - team introduction">
+                </div>
+                <div class="stage-content">
+                    <h3><span class="stage-number">1</span> Forming</h3>
+                    <p class="stage-intro">Initial meeting and team organization</p>
+                    <p>Our group was formed randomly for a Data Mining course project. Initially, there was some awkwardness as we didn't know each other. We started with introductions and shared our academic backgrounds and skills.</p>
+                    <p>I took the initiative to schedule our first meeting and create a shared document to track our progress. We discussed project requirements and tentatively assigned roles based on our strengths - I volunteered for data visualization since I had experience with Tableau.</p>
+                    <div class="key-learning">
+                        <strong>Key Learning:</strong> Taking initiative early helps establish positive group dynamics and creates momentum for the project.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Storming Stage -->
+            <div class="stage-card">
+                <div class="stage-image">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Storming stage - team discussion">
+                </div>
+                <div class="stage-content">
+                    <h3><span class="stage-number">2</span> Storming</h3>
+                    <p class="stage-intro">Conflicts and competition emerge</p>
+                    <p>About two weeks into the project, we faced our first major conflict regarding the analytical approach. One member wanted to use complex machine learning algorithms, while others preferred simpler statistical methods that were easier to interpret.</p>
+                    <p>Tensions rose during our meetings, and communication became strained. I facilitated a compromise by suggesting we prototype both approaches and compare results. This data-driven decision-making helped resolve the conflict objectively.</p>
+                    <div class="key-learning">
+                        <strong>Key Learning:</strong> Conflicts can be productive when channeled toward finding evidence-based solutions rather than personal disagreements.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Norming Stage -->
+            <div class="stage-card">
+                <div class="stage-image">
+                    <img src="https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Norming stage - team collaboration">
+                </div>
+                <div class="stage-content">
+                    <h3><span class="stage-number">3</span> Norming</h3>
+                    <p class="stage-intro">Establishing standards and cooperation</p>
+                    <p>After resolving our methodological disagreement, we established clearer communication protocols. We created a shared Slack channel for quick updates and scheduled regular check-in meetings every Tuesday and Thursday.</p>
+                    <p>We developed a workflow where each member would share their progress at the beginning of meetings, allowing us to identify potential bottlenecks early. I created a shared project timeline in Google Sheets that helped us stay organized and accountable.</p>
+                    <div class="key-learning">
+                        <strong>Key Learning:</strong> Clear communication structures and shared tools significantly improve team coordination and productivity.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performing Stage -->
+            <div class="stage-card">
+                <div class="stage-image">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Performing stage - team success">
+                </div>
+                <div class="stage-content">
+                    <h3><span class="stage-number">4</span> Performing</h3>
+                    <p class="stage-intro">Optimal team functionality</p>
+                    <p>In the final weeks of the project, our team reached peak performance. We worked efficiently with minimal supervision, anticipating each other's needs and seamlessly integrating our individual contributions.</p>
+                    <p>When we faced a last-minute data quality issue, we quickly reallocated tasks without conflict. I took responsibility for cleaning the problematic dataset while another member adjusted the analysis timeline. Our final presentation received positive feedback from our professor, particularly noting our cohesive teamwork.</p>
+                    <div class="key-learning">
+                        <strong>Key Learning:</strong> High-performing teams develop intuitive coordination and resilience that enables them to handle unexpected challenges effectively.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Reflection Section -->
+    <section class="reflection-section">
+        <div class="container reflection-content">
+            <h2>Overall Reflection</h2>
+            <p>This group project was a valuable learning experience that taught me much about teamwork, communication, and conflict resolution. While we didn't formally experience the "Adjourning" stage as described in Tuckman's model (since we're all continuing in the same program), we did celebrate our success with a casual lunch after our final presentation.</p>
+            
+            <p>What surprised me most was how our initial differences in approach eventually became our team's strength. The member who initially advocated for complex algorithms brought technical depth to our project, while those favoring simpler methods ensured our findings remained accessible to non-technical stakeholders.</p>
+            
+            <p>My chess background unexpectedly helped during the Storming phase - I approached conflicts as strategic challenges rather than personal attacks, focusing on finding moves that benefited the entire team. Similarly, my football experience reminded me that even star players need effective teamwork to win games.</p>
+            
+            <p>This experience has reinforced my belief that diverse perspectives, when properly channeled, create stronger outcomes than homogeneous thinking. I'll carry these lessons about effective collaboration into my future professional work in data analytics, where cross-functional teamwork is essential for success.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Charity Messe. All rights reserved.</p>
+            <p>BSc Business Intelligence & Data Analytics | Botswana Accountancy College</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

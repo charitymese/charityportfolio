@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Journey - Charity Messe | Digital Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3a1;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-link {
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .nav-link.active, .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .page-header h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 4rem 0;
+        }
+        
+        .article {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-list {
+            list-style: none;
+            margin-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .content-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .timeline-marker {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Quote Styling */
+        .quote {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        /* Key Takeaways */
+        .key-takeaway {
+            background-color: rgba(79, 195, 161, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .key-takeaway strong {
+            color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                padding: 2rem 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-link {
+                display: block;
+                padding: 1rem;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header {
+                padding: 7rem 0 3rem;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .timeline-marker {
+                width: 30px;
+                height: 30px;
+                margin-right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Charity Messe</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="cv.html" class="nav-link">CV</a></li>
+                <li><a href="reflection.html" class="nav-link active">Learning Journey</a></li>
+                <li><a href="group-work.html" class="nav-link">Group Work</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>My Learning Journey</h1>
+            <p class="subtitle">Reflections on growth, challenges, and key lessons from my BIDA program</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container content-section">
+        <article class="article">
+            <section class="article-section">
+                <h2>Introduction</h2>
+                <p>My journey in Business Intelligence and Data Analytics at Botswana Accountancy College has been transformative, challenging, and immensely rewarding. As I reflect on my academic path, I recognize how each course, project, and interaction has shaped my understanding of data and its power to drive meaningful decisions.</p>
+                
+                <div class="quote">
+                    "Data is not just numbers; it's the story of our world waiting to be told. Learning to translate that story has been the most exciting part of my journey."
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Foundational Lessons</h2>
+                <p>In my first year, I discovered that data analysis requires both technical skills and critical thinking. This realization came through my introductory statistics course, where I learned that numbers alone are meaningless without context and interpretation.</p>
+                
+                <div class="key-takeaway">
+                    <strong>Key Takeaway:</strong> The most valuable insights come from asking the right questions, not just from running complex algorithms. A simple analysis with clear business context often provides more value than a sophisticated model that's difficult to interpret.
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Challenges & Growth</h2>
+                <p>One of my most significant challenges was my first major data visualization project. I spent days creating complex charts and graphs, only to realize they were confusing to my audience. This taught me the importance of understanding my audience's perspective and designing visualizations that communicate clearly.</p>
+                
+                <ul class="content-list">
+                    <li><strong>Learning from failure:</strong> My initial project failures taught me to prototype quickly, gather feedback early, and iterate based on user understanding rather than technical complexity.</li>
+                    <li><strong>Building resilience:</strong> Debugging complex Python scripts and SQL queries taught me patience and systematic problem-solving approaches that I now apply to all technical challenges.</li>
+                    <li><strong>Seeking feedback:</strong> I learned to actively seek diverse perspectives on my work, which has dramatically improved the quality and impact of my analyses.</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h2>Milestones & Achievements</h2>
+                <p>Throughout my journey, I've reached several important milestones that mark my progress in data analytics:</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2022</div>
+                        <div class="timeline-content">
+                            <h4>High School Graduation</h4>
+                            <p>Graduated as top performer in Mathematics and Computer Studies, which sparked my interest in data analytics as a career path.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2023</div>
+                        <div class="timeline-content">
+                            <h4>Started BIDA Program</h4>
+                            <p>Began my Bachelor's in Business Intelligence & Data Analytics at Botswana Accountancy College, discovering the intersection of business strategy and data science.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2024</div>
+                        <div class="timeline-content">
+                            <h4>First Data Analysis Internship</h4>
+                            <p>Completed an internship at Botswana Innovation Hub, applying classroom knowledge to real-world business problems and creating my first professional dashboards.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2024</div>
+                        <div class="timeline-content">
+                            <h4>Dean's List Recognition</h4>
+                            <p>Achieved Dean's List status for two consecutive semesters, recognizing academic excellence and dedication to mastering data analytics concepts.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2025</div>
+                        <div class="timeline-content">
+                            <h4>Advanced Machine Learning Project</h4>
+                            <p>Developed a customer segmentation model using K-means clustering that achieved 85% accuracy, demonstrating mastery of unsupervised learning techniques.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Connecting Interests to Analytics</h2>
+                <p>My passion for chess has unexpectedly enhanced my analytical abilities. The strategic thinking, pattern recognition, and forward planning required in chess directly translate to data analysis:</p>
+                
+                <ul class="content-list">
+                    <li><strong>Strategic Thinking:</strong> Just as in chess, effective data analysis requires thinking several steps ahead and anticipating how different variables might interact.</li>
+                    <li><strong>Pattern Recognition:</strong> Identifying patterns in chess positions has sharpened my ability to spot trends and anomalies in datasets.</li>
+                    <li><strong>Decision Under Uncertainty:</strong> Chess teaches you to make the best move with incomplete information, a skill directly applicable to business decisions based on limited data.</li>
+                </ul>
+                
+                <p>Similarly, my experience with football has taught me about teamwork, communication, and adapting strategies based on performance data—all essential skills in collaborative data projects.</p>
+            </section>
+
+            <section class="article-section">
+                <h2>Current Focus & Future Goals</h2>
+                <p>As I continue my learning journey, my current focus areas include:</p>
+                
+                <ul class="content-list">
+                    <li><strong>Advanced Machine Learning:</strong> Deepening my understanding of predictive modeling and natural language processing techniques.</li>
+                    <li><strong>Data Ethics:</strong> Exploring the ethical implications of data collection and algorithmic decision-making, particularly in the African context.</li>
+                    <li><strong>Business Strategy Integration:</strong> Learning to better translate data insights into actionable business recommendations.</li>
+                </ul>
+                
+                <p>Looking forward, I aim to contribute to Botswana's growing data analytics ecosystem while continuing to develop expertise in applying data science to solve real-world problems in African businesses and communities.</p>
+            </section>
+
+            <section class="article-section">
+                <h2>Final Reflections</h2>
+                <p>This journey has taught me that learning data analytics is not just about mastering tools and techniques, but about developing a mindset of curiosity, critical thinking, and continuous improvement. I'm grateful for every challenge that has pushed me to grow and for the mentors who have guided my development.</p>
+                
+                <div class="quote">
+                    "The most valuable skill I've developed isn't coding or statistics—it's the ability to learn, adapt, and apply knowledge in new contexts. This mindset will serve me long after specific tools become obsolete."
+                </div>
+                
+                <p>As I approach the next phase of my journey, I remain committed to lifelong learning and to using data analytics to create positive impact in my community and beyond.</p>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Charity Messe. All rights reserved.</p>
+            <p>BSc Business Intelligence & Data Analytics | Botswana Accountancy College</p>
+            <div class="footer-links">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
