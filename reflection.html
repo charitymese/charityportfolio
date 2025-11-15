@@ -149,7 +149,12 @@
         
         /* Page Header */
         .page-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: 
+                linear-gradient(135deg, rgba(74, 111, 165, 0.85), rgba(22, 96, 136, 0.9)),
+                url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
             padding: 8rem 0 4rem;
             text-align: center;
@@ -202,56 +207,6 @@
             font-weight: bold;
         }
         
-        /* Timeline */
-        .timeline {
-            position: relative;
-            margin: 2rem 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: var(--primary-color);
-        }
-        
-        .timeline-item {
-            display: flex;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        
-        .timeline-marker {
-            width: 40px;
-            height: 40px;
-            background-color: var(--accent-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.9rem;
-            margin-right: 1.5rem;
-            flex-shrink: 0;
-            z-index: 1;
-        }
-        
-        .timeline-content {
-            flex: 1;
-            background-color: var(--light-color);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-        
-        .timeline-content h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        
         /* Quote Styling */
         .quote {
             border-left: 4px solid var(--accent-color);
@@ -272,6 +227,28 @@
         
         .key-takeaway strong {
             color: var(--secondary-color);
+        }
+        
+        /* Learning Points */
+        .learning-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .learning-card {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .learning-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
         
         /* Footer */
@@ -331,14 +308,8 @@
                 padding: 7rem 0 3rem;
             }
             
-            .timeline::before {
-                left: 15px;
-            }
-            
-            .timeline-marker {
-                width: 30px;
-                height: 30px;
-                margin-right: 1rem;
+            .learning-points {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -357,9 +328,10 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="cv.html" class="nav-link">CV</a></li>
-                <li><a href="reflection.html" class="nav-link active">Learning Journey</a></li>
+                <li><a href="reflection.html" class="nav-link active">Reflection</a></li>
                 <li><a href="group-work.html" class="nav-link">Group Work</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
+                 <li><a href="application_letter.html" class="nav-link">Application</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -369,7 +341,7 @@
     <section class="page-header">
         <div class="container">
             <h1>My Learning Journey</h1>
-            <p class="subtitle">Reflections on growth, challenges, and key lessons from my BIDA program</p>
+            <p class="subtitle">Reflections on my first semester as a BIDA student at Botswana Accountancy College</p>
         </div>
     </section>
 
@@ -377,112 +349,92 @@
     <main class="container content-section">
         <article class="article">
             <section class="article-section">
-                <h2>Introduction</h2>
-                <p>My journey in Business Intelligence and Data Analytics at Botswana Accountancy College has been transformative, challenging, and immensely rewarding. As I reflect on my academic path, I recognize how each course, project, and interaction has shaped my understanding of data and its power to drive meaningful decisions.</p>
+                <h2>Beginning the University Journey</h2>
+                <p>Starting at Botswana Accountancy College has been both exciting and challenging. As a first-year Business Intelligence and Data Analytics student, I've discovered that university life is completely different from what I experienced in secondary school. The independence and responsibility have been both liberating and overwhelming at times.</p>
                 
                 <div class="quote">
-                    "Data is not just numbers; it's the story of our world waiting to be told. Learning to translate that story has been the most exciting part of my journey."
+                    "University isn't just about getting a degree—it's about learning how to learn, adapting to new challenges, and discovering your own capabilities."
                 </div>
             </section>
 
             <section class="article-section">
-                <h2>Foundational Lessons</h2>
-                <p>In my first year, I discovered that data analysis requires both technical skills and critical thinking. This realization came through my introductory statistics course, where I learned that numbers alone are meaningless without context and interpretation.</p>
+                <h2>Adapting to University Life</h2>
+                <p>The transition from secondary school to university required significant adjustment. Suddenly, I was responsible for managing my own schedule, keeping track of assignments, and ensuring I attended all lectures without constant reminders. This newfound freedom was initially daunting.</p>
+                
+                <p>I quickly realized that success in university depends heavily on self-discipline and organization. I started using digital calendars and to-do lists to manage my assignments and study schedule. Learning to balance academic responsibilities with personal life has been one of my most important lessons this semester.</p>
                 
                 <div class="key-takeaway">
-                    <strong>Key Takeaway:</strong> The most valuable insights come from asking the right questions, not just from running complex algorithms. A simple analysis with clear business context often provides more value than a sophisticated model that's difficult to interpret.
+                    <strong>Key Takeaway:</strong> University success depends on developing strong time management skills and personal discipline. The transition requires adapting from being constantly guided to becoming self-directed in your learning journey.
                 </div>
             </section>
 
             <section class="article-section">
-                <h2>Challenges & Growth</h2>
-                <p>One of my most significant challenges was my first major data visualization project. I spent days creating complex charts and graphs, only to realize they were confusing to my audience. This taught me the importance of understanding my audience's perspective and designing visualizations that communicate clearly.</p>
+                <h2>Academic Challenges and Growth</h2>
+                <p>The academic rigor at BAC has pushed me to develop new ways of thinking and learning. Unlike secondary school where memorization was often sufficient, university requires deep understanding and application of concepts.</p>
                 
-                <ul class="content-list">
-                    <li><strong>Learning from failure:</strong> My initial project failures taught me to prototype quickly, gather feedback early, and iterate based on user understanding rather than technical complexity.</li>
-                    <li><strong>Building resilience:</strong> Debugging complex Python scripts and SQL queries taught me patience and systematic problem-solving approaches that I now apply to all technical challenges.</li>
-                    <li><strong>Seeking feedback:</strong> I learned to actively seek diverse perspectives on my work, which has dramatically improved the quality and impact of my analyses.</li>
-                </ul>
-            </section>
-
-            <section class="article-section">
-                <h2>Milestones & Achievements</h2>
-                <p>Throughout my journey, I've reached several important milestones that mark my progress in data analytics:</p>
+                <p>My Communication and Study Skills module has been particularly valuable in helping me adapt to academic writing and presentation requirements. Learning proper citation methods and research techniques has been essential for maintaining academic integrity.</p>
                 
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2022</div>
-                        <div class="timeline-content">
-                            <h4>High School Graduation</h4>
-                            <p>Graduated as top performer in Mathematics and Computer Studies, which sparked my interest in data analytics as a career path.</p>
+                <div class="learning-points">
+                    <div class="learning-card">
+                        <div class="learning-icon">
+                            <i class="fas fa-book"></i>
                         </div>
+                        <h4>Research Skills</h4>
+                        <p>Learning to find credible sources and cite them properly</p>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2023</div>
-                        <div class="timeline-content">
-                            <h4>Started BIDA Program</h4>
-                            <p>Began my Bachelor's in Business Intelligence & Data Analytics at Botswana Accountancy College, discovering the intersection of business strategy and data science.</p>
+                    <div class="learning-card">
+                        <div class="learning-icon">
+                            <i class="fas fa-laptop-code"></i>
                         </div>
+                        <h4>Digital Literacy</h4>
+                        <p>Improving proficiency with academic software and tools</p>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2024</div>
-                        <div class="timeline-content">
-                            <h4>First Data Analysis Internship</h4>
-                            <p>Completed an internship at Botswana Innovation Hub, applying classroom knowledge to real-world business problems and creating my first professional dashboards.</p>
+                    <div class="learning-card">
+                        <div class="learning-icon">
+                            <i class="fas fa-comments"></i>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2024</div>
-                        <div class="timeline-content">
-                            <h4>Dean's List Recognition</h4>
-                            <p>Achieved Dean's List status for two consecutive semesters, recognizing academic excellence and dedication to mastering data analytics concepts.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2025</div>
-                        <div class="timeline-content">
-                            <h4>Advanced Machine Learning Project</h4>
-                            <p>Developed a customer segmentation model using K-means clustering that achieved 85% accuracy, demonstrating mastery of unsupervised learning techniques.</p>
-                        </div>
+                        <h4>Communication</h4>
+                        <p>Developing clearer academic writing and presentation skills</p>
                     </div>
                 </div>
             </section>
 
             <section class="article-section">
-                <h2>Connecting Interests to Analytics</h2>
-                <p>My passion for chess has unexpectedly enhanced my analytical abilities. The strategic thinking, pattern recognition, and forward planning required in chess directly translate to data analysis:</p>
+                <h2>Discovering Data Analytics</h2>
+                <p>As a BIDA student, I'm just beginning to explore the world of data analytics. The foundational concepts we're learning have opened my eyes to how data drives decision-making in modern businesses.</p>
                 
-                <ul class="content-list">
-                    <li><strong>Strategic Thinking:</strong> Just as in chess, effective data analysis requires thinking several steps ahead and anticipating how different variables might interact.</li>
-                    <li><strong>Pattern Recognition:</strong> Identifying patterns in chess positions has sharpened my ability to spot trends and anomalies in datasets.</li>
-                    <li><strong>Decision Under Uncertainty:</strong> Chess teaches you to make the best move with incomplete information, a skill directly applicable to business decisions based on limited data.</li>
-                </ul>
+                <p>Though I'm still in the early stages of my program, I'm developing an appreciation for how data can tell stories and reveal insights that aren't immediately obvious. Learning about basic data analysis techniques has made me more observant about patterns in everyday information.</p>
                 
-                <p>Similarly, my experience with football has taught me about teamwork, communication, and adapting strategies based on performance data—all essential skills in collaborative data projects.</p>
+                <div class="key-takeaway">
+                    <strong>Key Takeaway:</strong> Data analytics is about finding meaningful patterns and stories within information. Even basic analytical thinking can transform how we understand the world around us.
+                </div>
             </section>
 
             <section class="article-section">
-                <h2>Current Focus & Future Goals</h2>
-                <p>As I continue my learning journey, my current focus areas include:</p>
+                <h2>Personal Development</h2>
+                <p>Beyond academics, this first semester has taught me valuable life lessons about resilience and adaptability. There have been moments of frustration when concepts didn't click immediately, but I've learned the importance of persistence.</p>
+                
+                <p>Maintaining a positive mindset has been crucial during challenging times. When facing difficult assignments or complex topics, I remind myself that every expert was once a beginner, and consistent effort leads to progress.</p>
                 
                 <ul class="content-list">
-                    <li><strong>Advanced Machine Learning:</strong> Deepening my understanding of predictive modeling and natural language processing techniques.</li>
-                    <li><strong>Data Ethics:</strong> Exploring the ethical implications of data collection and algorithmic decision-making, particularly in the African context.</li>
-                    <li><strong>Business Strategy Integration:</strong> Learning to better translate data insights into actionable business recommendations.</li>
+                    <li><strong>Resilience:</strong> Learning to bounce back from academic challenges and setbacks</li>
+                    <li><strong>Adaptability:</strong> Adjusting to new learning environments and teaching styles</li>
+                    <li><strong>Self-awareness:</strong> Recognizing my learning preferences and when to seek help</li>
+                    <li><strong>Balance:</strong> Finding the right mix of study, rest, and personal activities</li>
                 </ul>
-                
-                <p>Looking forward, I aim to contribute to Botswana's growing data analytics ecosystem while continuing to develop expertise in applying data science to solve real-world problems in African businesses and communities.</p>
             </section>
 
             <section class="article-section">
-                <h2>Final Reflections</h2>
-                <p>This journey has taught me that learning data analytics is not just about mastering tools and techniques, but about developing a mindset of curiosity, critical thinking, and continuous improvement. I'm grateful for every challenge that has pushed me to grow and for the mentors who have guided my development.</p>
+                <h2>Looking Forward</h2>
+                <p>As I complete my first semester, I feel more prepared for the academic journey ahead. The challenges I've faced have strengthened my confidence in my ability to handle university-level work.</p>
+                
+                <p>I'm excited to continue developing my data analytics skills and look forward to the more advanced courses in my program. Each day at BAC brings me closer to becoming the data professional I aspire to be.</p>
                 
                 <div class="quote">
-                    "The most valuable skill I've developed isn't coding or statistics—it's the ability to learn, adapt, and apply knowledge in new contexts. This mindset will serve me long after specific tools become obsolete."
+                    "The foundation we build in our first year supports everything that follows. I'm grateful for both the struggles and successes that have shaped my growth so far."
                 </div>
                 
-                <p>As I approach the next phase of my journey, I remain committed to lifelong learning and to using data analytics to create positive impact in my community and beyond.</p>
+                <p>This initial university experience has been transformative, teaching me that education extends far beyond the classroom. The skills I'm developing—both academic and personal—will serve me well throughout my career and life.</p>
             </section>
         </article>
     </main>

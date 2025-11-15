@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Charity Messe | Digital Portfolio</title>
+    <title>Application Letter - Charity Messe | Digital Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Google Fonts -->
@@ -151,7 +151,7 @@
         .page-header {
             background: 
                 linear-gradient(135deg, rgba(74, 111, 165, 0.85), rgba(22, 96, 136, 0.9)),
-                url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+                url('https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -173,63 +173,98 @@
             margin: 0 auto;
         }
         
-        /* Contact Section */
-        .contact-section {
+        /* Application Letter Section */
+        .application-section {
             padding: 4rem 0;
         }
         
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-        
-        .contact-form-wrapper {
+        .letter-container {
+            max-width: 800px;
+            margin: 0 auto;
             background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
+            padding: 3rem;
             box-shadow: var(--shadow);
+            border-radius: 8px;
         }
         
-        .contact-form-wrapper h2 {
-            margin-top: 0;
+        .letter-header {
             text-align: center;
+            margin-bottom: 2rem;
         }
         
-        .contact-form-wrapper h2::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        label {
-            display: block;
+        .letter-header h2 {
+            color: var(--primary-color);
             margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--dark-color);
         }
         
-        input, textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
+        .letter-header p {
+            color: var(--text-light);
+            font-style: italic;
         }
         
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.1);
+        .letter-content {
+            line-height: 1.8;
+        }
+        
+        .sender-address {
+            margin-bottom: 2rem;
+        }
+        
+        .sender-address p {
+            margin-bottom: 0.25rem;
+        }
+        
+        .date {
+            margin-bottom: 2rem;
+            text-align: right;
+        }
+        
+        .recipient-address {
+            margin-bottom: 2rem;
+        }
+        
+        .recipient-address p {
+            margin-bottom: 0.25rem;
+        }
+        
+        .salutation {
+            margin-bottom: 1rem;
+        }
+        
+        .letter-body {
+            margin-bottom: 2rem;
+        }
+        
+        .letter-body p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        .closing {
+            margin-top: 3rem;
+        }
+        
+        .signature {
+            margin-top: 3rem;
+        }
+        
+        .signature p {
+            margin-bottom: 0.25rem;
+        }
+        
+        /* Action Buttons */
+        .letter-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
         }
         
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 0.75rem 1.5rem;
             background-color: var(--primary-color);
             color: white;
@@ -238,15 +273,14 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            text-align: center;
-            width: 100%;
-            font-size: 1rem;
+            text-decoration: none;
         }
         
         .btn:hover {
             background-color: var(--secondary-color);
             transform: translateY(-2px);
             box-shadow: var(--shadow);
+            color: white;
         }
         
         .btn-primary {
@@ -255,91 +289,6 @@
         
         .btn-primary:hover {
             background-color: #3da98a;
-        }
-        
-        /* Contact Info */
-        .contact-info {
-            background-color: var(--light-color);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            height: fit-content;
-        }
-        
-        .contact-info h2 {
-            margin-top: 0;
-            text-align: center;
-        }
-        
-        .contact-info h2::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .contact-methods {
-            margin-top: 1.5rem;
-        }
-        
-        .contact-item {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .contact-item h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .contact-item h4 i {
-            color: var(--accent-color);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background-color: white;
-            border-radius: 4px;
-            color: var(--dark-color);
-            transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .social-link:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        /* Availability Section */
-        .availability {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background-color: white;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color);
-        }
-        
-        .availability h4 {
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
         }
         
         /* Footer */
@@ -361,6 +310,26 @@
         
         .footer-links a:hover {
             color: var(--accent-color);
+        }
+        
+        /* Print Styles */
+        @media print {
+            .navbar, .page-header, .letter-actions, footer {
+                display: none;
+            }
+            
+            body {
+                background-color: white;
+            }
+            
+            .application-section {
+                padding: 0;
+            }
+            
+            .letter-container {
+                box-shadow: none;
+                padding: 0;
+            }
         }
         
         /* Responsive Design */
@@ -399,12 +368,17 @@
                 padding: 7rem 0 3rem;
             }
             
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .letter-container {
+                padding: 1.5rem;
             }
             
-            .social-links {
+            .letter-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
                 justify-content: center;
             }
         }
@@ -427,8 +401,8 @@
                 <li><a href="reflection.html" class="nav-link">Reflection</a></li>
                 <li><a href="group-work.html" class="nav-link">Group Work</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
-                 <li><a href="application_letter.html" class="nav-link">Application</a></li>
-                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="application.html" class="nav-link active">Application</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -436,81 +410,93 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Get In Touch</h1>
-            <p class="subtitle">I'd love to hear from you. Let's connect and discuss data analytics opportunities!</p>
+            <h1>Application Letter</h1>
+            <p class="subtitle">Professional industrial attachment application template</p>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="container contact-section">
-        <div class="contact-grid">
-            <div class="contact-form-wrapper">
-                <h2>Send me a message</h2>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project, opportunity, or question..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
+    <!-- Application Letter Section -->
+    <section class="application-section">
+        <div class="container">
+            <div class="letter-container">
+                <div class="letter-header">
+                    <h2>APPLICATION LETTER</h2>
+                    <p>Below is an application letter showcasing a request for industrial attachment.</p>
+                </div>
 
-            <div class="contact-info">
-                <h2>Other ways to connect</h2>
-                <div class="contact-methods">
-                    <div class="contact-item">
-                        <h4><i class="fas fa-envelope"></i> Email</h4>
-                        <a href="mailto:charity.messe@student.bac.ac.bw">charity.messe@student.bac.ac.bw</a>
+                <div class="letter-content">
+                    <div class="sender-address">
+                        <p><strong>CHARITY MESSE</strong></p>
+                        <p>GABORONE, BOTSWANA</p>
+                        <p>P.O. BOX 12345 GABORONE</p>
+                        <p>charity.messe@student.bac.ac.bw</p>
+                        <p>+267 123 4567</p>
                     </div>
-                    <div class="contact-item">
-                        <h4><i class="fas fa-phone"></i> Phone</h4>
-                        <a href="tel:+2671234567">+267 123 4567</a>
+
+                    <div class="date">
+                        <p>25 OCTOBER 2025</p>
                     </div>
-                    <div class="contact-item">
-                        <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
-                        <p>Gaborone, Botswana</p>
+
+                    <div class="recipient-address">
+                        <p><strong>THE HUMAN RESOURCE MANAGER</strong></p>
+                        <p>DEBSWANA</p>
+                        <p>PLOT 64288, AIRPORT ROAD, BLOCK 8</p>
+                        <p>GABORONE, BOTSWANA</p>
+                        <p>P.O. BOX 329 GABORONE</p>
                     </div>
-                    <div class="contact-item">
-                        <h4><i class="fas fa-share-alt"></i> Social Media</h4>
-                        <div class="social-links">
-                            <a href="#" class="social-link" aria-label="GitHub">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="#" class="social-link" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin"></i> LinkedIn
-                            </a>
-                            <a href="#" class="social-link" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i> Twitter
-                            </a>
-                        </div>
+
+                    <div class="salutation">
+                        <p><strong>Dear Sir/Madam,</strong></p>
+                    </div>
+
+                    <div class="letter-body">
+                        <p><strong>Re: Application for Industrial Attachment</strong></p>
+                        
+                        <p>I am currently a first-year student pursuing a Bachelor's Degree in Business Intelligence and Data Analytics at Botswana Accountancy College. I write to express my interest in an industrial attachment opportunity with your organization.</p>
+                        
+                        <p>I am eager to gain hands-on experience in data analysis, business intelligence systems, and ICT operations. My coursework has equipped me with foundational knowledge in data analytics tools, business computing, and communication skills, which I am ready to apply in a professional environment.</p>
+                        
+                        <p>I am a fast learner, dedicated, and willing to contribute to your data analytics or ICT team while simultaneously developing my technical and problem-solving skills. I am confident that my attachment with your company would be mutually beneficial, allowing me to apply my academic knowledge while contributing to your organization's objectives.</p>
+                        
+                        <p>I would appreciate the opportunity to discuss how I can add value to your organization during my attachment period. Thank you for your time and consideration.</p>
+                    </div>
+
+                    <div class="closing">
+                        <p><strong>Yours faithfully,</strong></p>
+                    </div>
+
+                    <div class="signature">
+                        <p><strong>Charity Messe</strong></p>
+                        <p>BSc Business Intelligence & Data Analytics Student</p>
+                        <p>Botswana Accountancy College</p>
                     </div>
                 </div>
-                
-                <div class="availability">
-                    <h4><i class="fas fa-clock"></i> Response Time</h4>
-                    <p>I typically respond to emails within 24-48 hours. For urgent matters, please include "URGENT" in your subject line.</p>
+
+                <div class="letter-actions">
+                    <button class="btn btn-primary" onclick="window.print()">
+                        <i class="fas fa-print"></i> Print Letter
+                    </button>
+                    <a href="cv.html" class="btn">
+                        <i class="fas fa-file-alt"></i> View CV
+                    </a>
+                    <a href="contact.html" class="btn">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
-     <footer>
+    <footer>
         <div class="container">
             <p>&copy; 2025 Charity Messe. All rights reserved.</p>
             <p>BSc Business Intelligence & Data Analytics | Botswana Accountancy College</p>
+            <div class="footer-links">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
@@ -530,23 +516,13 @@
             });
         });
         
-        // Form submission handling
-        const contactForm = document.querySelector('.contact-form');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simple form validation
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            if (name && email && subject && message) {
-                // In a real application, you would send this data to a server
-                alert('Thank you for your message, ' + name + '! I will get back to you soon.');
-                contactForm.reset();
-            } else {
-                alert('Please fill in all required fields.');
+        // Print functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const printButton = document.querySelector('.btn-primary');
+            if (printButton) {
+                printButton.addEventListener('click', function() {
+                    window.print();
+                });
             }
         });
     </script>
