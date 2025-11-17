@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     
+    <link rel="shortcut icon" href="img/3.jpg" type="image/x-icon">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -149,7 +150,12 @@
         
         /* Page Header */
         .page-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: 
+                linear-gradient(135deg, rgba(74, 111, 165, 0.85), rgba(22, 96, 136, 0.9)),
+                url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
             padding: 8rem 0 4rem;
             text-align: center;
@@ -257,6 +263,27 @@
             color: var(--secondary-color);
         }
         
+        /* Challenges List */
+        .challenges-list {
+            list-style: none;
+            margin-left: 0;
+            margin-top: 1rem;
+        }
+        
+        .challenges-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .challenges-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
         /* Reflection Section */
         .reflection-section {
             background-color: var(--light-color);
@@ -276,6 +303,15 @@
         .reflection-content h2::after {
             left: 50%;
             transform: translateX(-50%);
+        }
+        
+        /* Quote Styling */
+        .quote {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--text-light);
         }
         
         /* Footer */
@@ -344,7 +380,7 @@
                 <li><a href="reflection.html" class="nav-link">Reflection</a></li>
                 <li><a href="group-work.html" class="nav-link active">Group Work</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
-                 <li><a href="application_letter.html" class="nav-link">Application</a></li>
+                <li><a href="application.html" class="nav-link">Application</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -354,30 +390,29 @@
     <section class="page-header">
         <div class="container">
             <h1>Group Work Reflection</h1>
-            <p class="subtitle">Analyzing team dynamics through Tuckman's stages of group development</p>
+            <p class="subtitle">My CSS Group Presentation Journey: Navigating Teamwork Through Tuckman's Stages</p>
         </div>
     </section>
 
     <main class="container group-work-section">
         <div class="tuckman-intro">
             <h2>Tuckman's Stages of Group Development</h2>
-            <p>This reflection analyzes my experience in a semester-long data analytics project group, using Tuckman's model to understand how our team evolved through different stages of development.</p>
+            <p>When we first received the Kopano Enterprises CSS group presentation, it felt like one of those assignments that looks simple on paper but becomes very real once you start working on it. What made the experience even more meaningful was that we chose our own groups based on people we naturally got along with.</p>
+            <p>Looking back, our journey followed Tuckman's stages of group development almost perfectly, from the moment we formed the group to the moment we walked out of the boarding room after presenting.</p>
         </div>
 
         <div class="tuckman-stages">
             <!-- Forming Stage -->
             <div class="stage-card">
                 <div class="stage-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Forming stage - team introduction">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Forming stage - team introduction">
                 </div>
                 <div class="stage-content">
                     <h3><span class="stage-number">1</span> Forming</h3>
-                    <p class="stage-intro">Initial meeting and team organization</p>
-                    <p>Our group was formed randomly for a Data Mining course project. Initially, there was some awkwardness as we didn't know each other. We started with introductions and shared our academic backgrounds and skills.</p>
-                    <p>I took the initiative to schedule our first meeting and create a shared document to track our progress. We discussed project requirements and tentatively assigned roles based on our strengths - I volunteered for data visualization since I had experience with Tableau.</p>
-                    <div class="key-learning">
-                        <strong>Key Learning:</strong> Taking initiative early helps establish positive group dynamics and creates momentum for the project.
-                    </div>
+                    <p class="stage-intro">Choosing Each Other & Appointing Our Leader</p>
+                    <p>The forming stage was actually exciting. Since we were allowed to choose our group members, we went with people we vibed with — classmates we sit with, laugh with, or already understand academically.</p>
+                    <p>That's also when we chose our group leader, Mellisa. We picked her because she's always active in class, quick to answer questions, and just naturally carries herself with leadership energy.</p>
+                    <p>We created our WhatsApp group immediately, shared the assignment PDF, and started planning how we would approach the simulation and the presentation.</p>
                 </div>
             </div>
 
@@ -388,12 +423,15 @@
                 </div>
                 <div class="stage-content">
                     <h3><span class="stage-number">2</span> Storming</h3>
-                    <p class="stage-intro">Conflicts and competition emerge</p>
-                    <p>About two weeks into the project, we faced our first major conflict regarding the analytical approach. One member wanted to use complex machine learning algorithms, while others preferred simpler statistical methods that were easier to interpret.</p>
-                    <p>Tensions rose during our meetings, and communication became strained. I facilitated a compromise by suggesting we prototype both approaches and compare results. This data-driven decision-making helped resolve the conflict objectively.</p>
-                    <div class="key-learning">
-                        <strong>Key Learning:</strong> Conflicts can be productive when channeled toward finding evidence-based solutions rather than personal disagreements.
-                    </div>
+                    <p class="stage-intro">The Panic, The Small Clashes & The Reality Check</p>
+                    <p>Like any real group, storming hit us when the assignment started feeling real. Some people were unsure about the company challenges, others had different ideas of how the meeting simulation should run.</p>
+                    <ul class="challenges-list">
+                        <li>Someone would panic because their slides were not done</li>
+                        <li>Responses in the group chat delayed</li>
+                        <li>Some members felt shy about presenting</li>
+                        <li>A few of us struggled with the idea of acting out a "formal meeting"</li>
+                    </ul>
+                    <p>It wasn't dramatic, but the small misunderstandings were definitely there. The good thing is — we kept pushing through.</p>
                 </div>
             </div>
 
@@ -404,12 +442,10 @@
                 </div>
                 <div class="stage-content">
                     <h3><span class="stage-number">3</span> Norming</h3>
-                    <p class="stage-intro">Establishing standards and cooperation</p>
-                    <p>After resolving our methodological disagreement, we established clearer communication protocols. We created a shared Slack channel for quick updates and scheduled regular check-in meetings every Tuesday and Thursday.</p>
-                    <p>We developed a workflow where each member would share their progress at the beginning of meetings, allowing us to identify potential bottlenecks early. I created a shared project timeline in Google Sheets that helped us stay organized and accountable.</p>
-                    <div class="key-learning">
-                        <strong>Key Learning:</strong> Clear communication structures and shared tools significantly improve team coordination and productivity.
-                    </div>
+                    <p class="stage-intro">Finding Our Rhythm & Preparing Properly</p>
+                    <p>Eventually, things started aligning. We divided the work, assigned roles, and agreed on using PowerPoint as our main presentation tool. Everyone worked on their part, and we reviewed each other's slides to make sure the flow was professional and consistent.</p>
+                    <p>Before school holidays, we met a few times to discuss the structure. And then after the holidays — with only three days left before submission day — we became very serious. We met again, practised our lines, rehearsed the meeting simulation, and fixed anything that still looked confusing.</p>
+                    <p>This was the moment where the teamwork truly started showing. People who were shy began to open up, and those who were scared to speak in front of others made the effort to practice more.</p>
                 </div>
             </div>
 
@@ -420,11 +456,32 @@
                 </div>
                 <div class="stage-content">
                     <h3><span class="stage-number">4</span> Performing</h3>
-                    <p class="stage-intro">Optimal team functionality</p>
-                    <p>In the final weeks of the project, our team reached peak performance. We worked efficiently with minimal supervision, anticipating each other's needs and seamlessly integrating our individual contributions.</p>
-                    <p>When we faced a last-minute data quality issue, we quickly reallocated tasks without conflict. I took responsibility for cleaning the problematic dataset while another member adjusted the analysis timeline. Our final presentation received positive feedback from our professor, particularly noting our cohesive teamwork.</p>
+                    <p class="stage-intro">Presentation Day in the Boarding Room</p>
+                    <p>On presentation day, we agreed to wear formal attire just to look more professional and well-coordinated. And honestly? We looked the part.</p>
+                    <p>We presented in the boarding room, just us and ma'am sitting alone at the back, observing everything. The environment made the whole thing feel even more serious.</p>
+                    <p>Not everything was perfect:</p>
+                    <ul class="challenges-list">
+                        <li>Some members stuttered</li>
+                        <li>A few got scared when questions came</li>
+                        <li>We panicked during some of the Q&A from the lecturer</li>
+                        <li>We couldn't answer every question smoothly</li>
+                    </ul>
+                    <p>But even with all the nerves, we managed. Everyone spoke. Everyone delivered their section. The meeting simulation flowed, and our slides supported the presentation well. The important part is that we tried, and we worked together all the way until the end.</p>
+                </div>
+            </div>
+
+            <!-- Adjourning Stage -->
+            <div class="stage-card">
+                <div class="stage-image">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Adjourning stage - team celebration">
+                </div>
+                <div class="stage-content">
+                    <h3><span class="stage-number">5</span> Adjourning</h3>
+                    <p class="stage-intro">We Finished — And We Felt Proud</p>
+                    <p>After we presented, there was this quiet moment of relief and pride. We congratulated each other, laughed about the parts where we panicked, and thanked the person who submitted the slides on Turnitin.</p>
+                    <p>Even though the presentation wasn't perfect, it showed growth, teamwork, and commitment. We walked out knowing we did our best — and that's the true spirit behind Tuckman's final stage: closing the chapter together.</p>
                     <div class="key-learning">
-                        <strong>Key Learning:</strong> High-performing teams develop intuitive coordination and resilience that enables them to handle unexpected challenges effectively.
+                        <strong>Key Learning:</strong> Success isn't about perfection; it's about growth, commitment, and working together through challenges.
                     </div>
                 </div>
             </div>
@@ -434,14 +491,16 @@
     <!-- Reflection Section -->
     <section class="reflection-section">
         <div class="container reflection-content">
-            <h2>Overall Reflection</h2>
-            <p>This group project was a valuable learning experience that taught me much about teamwork, communication, and conflict resolution. While we didn't formally experience the "Adjourning" stage as described in Tuckman's model (since we're all continuing in the same program), we did celebrate our success with a casual lunch after our final presentation.</p>
+            <h2>Final Reflection</h2>
+            <p>This group presentation experience taught me that teamwork isn't just about dividing slides. It's about communication, support, patience, and accepting that everyone has strengths and weaknesses. We didn't deliver a perfect corporate-style presentation, but for a group of first-year students learning as we go, we delivered something honest, hardworking, and truly collaborative.</p>
             
-            <p>What surprised me most was how our initial differences in approach eventually became our team's strength. The member who initially advocated for complex algorithms brought technical depth to our project, while those favoring simpler methods ensured our findings remained accessible to non-technical stakeholders.</p>
+            <div class="quote">
+                "Most importantly, it showed me how real group dynamics work — and how each stage shapes the final outcome."
+            </div>
             
-            <p>My chess background unexpectedly helped during the Storming phase - I approached conflicts as strategic challenges rather than personal attacks, focusing on finding moves that benefited the entire team. Similarly, my football experience reminded me that even star players need effective teamwork to win games.</p>
+            <p>The journey through Tuckman's stages gave me valuable insights into how teams form, face challenges, and eventually succeed together. This experience has prepared me for future collaborative work in both academic and professional settings.</p>
             
-            <p>This experience has reinforced my belief that diverse perspectives, when properly channeled, create stronger outcomes than homogeneous thinking. I'll carry these lessons about effective collaboration into my future professional work in data analytics, where cross-functional teamwork is essential for success.</p>
+            <p>As I continue my studies in Business Intelligence and Data Analytics, I know that teamwork will be essential. This first group project has given me the confidence to approach future collaborations with understanding, patience, and the knowledge that every team goes through similar growth processes.</p>
         </div>
     </section>
 
