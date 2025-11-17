@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Journey - Charity Messe | Digital Portfolio</title>
+    <title>Learning Journey - Charity Mese | Digital Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Google Fonts -->
@@ -229,24 +229,36 @@
             color: var(--secondary-color);
         }
         
-        /* Learning Points */
-        .learning-points {
+        /* Stage Cards */
+        .stage-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
         
-        .learning-card {
+        .stage-card {
             background-color: var(--light-color);
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: var(--shadow);
-            text-align: center;
+            border-left: 4px solid var(--primary-color);
         }
         
-        .learning-icon {
-            font-size: 2rem;
+        .stage-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .stage-card h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
@@ -308,7 +320,7 @@
                 padding: 7rem 0 3rem;
             }
             
-            .learning-points {
+            .stage-cards {
                 grid-template-columns: 1fr;
             }
         }
@@ -318,7 +330,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">Charity Messe</div>
+            <div class="logo">Charity Mese</div>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
                 <span></span>
@@ -331,7 +343,7 @@
                 <li><a href="reflection.html" class="nav-link active">Reflection</a></li>
                 <li><a href="group-work.html" class="nav-link">Group Work</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
-                 <li><a href="application_letter.html" class="nav-link">Application</a></li>
+                <li><a href="application.html" class="nav-link">Application</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -349,92 +361,58 @@
     <main class="container content-section">
         <article class="article">
             <section class="article-section">
-                <h2>Beginning the University Journey</h2>
-                <p>Starting at Botswana Accountancy College has been both exciting and challenging. As a first-year Business Intelligence and Data Analytics student, I've discovered that university life is completely different from what I experienced in secondary school. The independence and responsibility have been both liberating and overwhelming at times.</p>
+                <h2>Reflective Blog Post: My First University Group Presentation Journey</h2>
+                <p>Coming into university, I knew group work would be a big part of the experience, but I didn't really understand what that meant until our ICT101 group presentation for Kopano Enterprises. Our task was to act as a consulting team and create a 10-minute presentation solving a company's communication problems. Looking back, our group's journey was a perfect example of Tuckman's stages of group development: Forming, Storming, Norming, Performing, and Adjourning.</p>
+            </section>
+
+            <section class="article-section">
+                <h2>Tuckman's Stages in Action</h2>
                 
-                <div class="quote">
-                    "University isn't just about getting a degree—it's about learning how to learn, adapting to new challenges, and discovering your own capabilities."
+                <div class="stage-cards">
+                    <div class="stage-card">
+                        <h3><span class="stage-number">1</span> Forming: The Nervous Beginning</h3>
+                        <p>Our group was formed mostly by our tutor based on our student IDs. In the beginning, it was a bit awkward. We didn't know each other, and our first meeting on Microsoft Teams was just a lot of silent smiles and "hellos." We were all polite but nervous, trying to figure out who was good at what.</p>
+                        <p>We started by simply reading the assignment brief together and agreeing that we needed to meet again. It felt like we were all waiting for someone else to take the lead.</p>
+                    </div>
+
+                    <div class="stage-card">
+                        <h3><span class="stage-number">2</span> Storming: The Reality of Clashing Ideas</h3>
+                        <p>This stage hit us about a week in. We had decided on the main challenges for Kopano Enterprises, but when it came to the solutions, we had very different ideas. One member wanted very detailed, theoretical solutions, while another thought we should keep it simple and practical.</p>
+                        <p>A few of us were quieter and just agreed to avoid conflict. For a couple of days, our group chat went quiet because it felt like we weren't getting anywhere. This was the most challenging part. We resolved it when one member finally suggested we vote on the top three solutions to focus on. It wasn't a perfect fix, but it helped us move forward without anyone feeling completely ignored.</p>
+                    </div>
+
+                    <div class="stage-card">
+                        <h3><span class="stage-number">3</span> Norming: Finding Our Rhythm</h3>
+                        <p>After we got through the "storming," things started to click. We properly assigned roles based on our strengths. I volunteered to work on the visual aids because I'm comfortable with Canva. Another member who was a confident speaker took the lead on the introduction slides.</p>
+                        <p>We created a shared PowerPoint online and set small, achievable deadlines for each other. For example, "Have slides 4-8 done by Friday." Having this structure made everything feel more manageable and fair. We started using a proper agenda for our meetings, which made them much shorter and more productive.</p>
+                    </div>
+
+                    <div class="stage-card">
+                        <h3><span class="stage-number">4</span> Performing: The Final Push and Presentation Day</h3>
+                        <p>In the final week before the presentation, we finally hit our stride. We practiced together over Teams twice. We gave each other feedback on our speaking parts, like "speak a bit slower" or "that slide needs a better image." We timed ourselves to make sure we didn't go over 10 minutes.</p>
+                        <p>On the actual presentation day, we were all nervous, but because we had practiced and everyone knew their part, it went smoothly. We supported each other with nods, and when one person forgot a small point, the next person smoothly covered for them. It felt like we were a real team.</p>
+                    </div>
+
+                    <div class="stage-card">
+                        <h3><span class="stage-number">5</span> Adjourning: A Bittersweet End</h3>
+                        <p>After we presented and submitted the PDF, there was a sense of relief and accomplishment. We sent messages in the group chat like "Great job, everyone!" and "We did it!". However, since the module is still ongoing, we haven't officially "disbanded." The chat has gone quiet again, but now it feels more like a successful completion than the tense silence during the storming stage.</p>
+                    </div>
                 </div>
             </section>
 
             <section class="article-section">
-                <h2>Adapting to University Life</h2>
-                <p>The transition from secondary school to university required significant adjustment. Suddenly, I was responsible for managing my own schedule, keeping track of assignments, and ensuring I attended all lectures without constant reminders. This newfound freedom was initially daunting.</p>
-                
-                <p>I quickly realized that success in university depends heavily on self-discipline and organization. I started using digital calendars and to-do lists to manage my assignments and study schedule. Learning to balance academic responsibilities with personal life has been one of my most important lessons this semester.</p>
+                <h2>What I Learned About Communication and Teamwork</h2>
+                <p>This experience taught me that conflict in a group is normal and can actually lead to a better final product if handled respectfully. I learned that clear communication isn't just about talking; it's about listening and being willing to compromise.</p>
                 
                 <div class="key-takeaway">
-                    <strong>Key Takeaway:</strong> University success depends on developing strong time management skills and personal discipline. The transition requires adapting from being constantly guided to becoming self-directed in your learning journey.
+                    <strong>Key Insight:</strong> I also saw how important it is to have a clear structure, like an agenda and assigned roles, to keep everyone on track. While it was stressful at times, working in this group helped me build confidence and showed me that I can collaborate with different kinds of people to achieve a common goal.
                 </div>
-            </section>
-
-            <section class="article-section">
-                <h2>Academic Challenges and Growth</h2>
-                <p>The academic rigor at BAC has pushed me to develop new ways of thinking and learning. Unlike secondary school where memorization was often sufficient, university requires deep understanding and application of concepts.</p>
                 
-                <p>My Communication and Study Skills module has been particularly valuable in helping me adapt to academic writing and presentation requirements. Learning proper citation methods and research techniques has been essential for maintaining academic integrity.</p>
-                
-                <div class="learning-points">
-                    <div class="learning-card">
-                        <div class="learning-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <h4>Research Skills</h4>
-                        <p>Learning to find credible sources and cite them properly</p>
-                    </div>
-                    <div class="learning-card">
-                        <div class="learning-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h4>Digital Literacy</h4>
-                        <p>Improving proficiency with academic software and tools</p>
-                    </div>
-                    <div class="learning-card">
-                        <div class="learning-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h4>Communication</h4>
-                        <p>Developing clearer academic writing and presentation skills</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h2>Discovering Data Analytics</h2>
-                <p>As a BIDA student, I'm just beginning to explore the world of data analytics. The foundational concepts we're learning have opened my eyes to how data drives decision-making in modern businesses.</p>
-                
-                <p>Though I'm still in the early stages of my program, I'm developing an appreciation for how data can tell stories and reveal insights that aren't immediately obvious. Learning about basic data analysis techniques has made me more observant about patterns in everyday information.</p>
-                
-                <div class="key-takeaway">
-                    <strong>Key Takeaway:</strong> Data analytics is about finding meaningful patterns and stories within information. Even basic analytical thinking can transform how we understand the world around us.
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h2>Personal Development</h2>
-                <p>Beyond academics, this first semester has taught me valuable life lessons about resilience and adaptability. There have been moments of frustration when concepts didn't click immediately, but I've learned the importance of persistence.</p>
-                
-                <p>Maintaining a positive mindset has been crucial during challenging times. When facing difficult assignments or complex topics, I remind myself that every expert was once a beginner, and consistent effort leads to progress.</p>
-                
-                <ul class="content-list">
-                    <li><strong>Resilience:</strong> Learning to bounce back from academic challenges and setbacks</li>
-                    <li><strong>Adaptability:</strong> Adjusting to new learning environments and teaching styles</li>
-                    <li><strong>Self-awareness:</strong> Recognizing my learning preferences and when to seek help</li>
-                    <li><strong>Balance:</strong> Finding the right mix of study, rest, and personal activities</li>
-                </ul>
-            </section>
-
-            <section class="article-section">
-                <h2>Looking Forward</h2>
-                <p>As I complete my first semester, I feel more prepared for the academic journey ahead. The challenges I've faced have strengthened my confidence in my ability to handle university-level work.</p>
-                
-                <p>I'm excited to continue developing my data analytics skills and look forward to the more advanced courses in my program. Each day at BAC brings me closer to becoming the data professional I aspire to be.</p>
+                <p>It was a valuable first step in preparing for the professional world. This group project gave me practical experience in teamwork that I know will be essential throughout my university journey and future career in data analytics.</p>
                 
                 <div class="quote">
-                    "The foundation we build in our first year supports everything that follows. I'm grateful for both the struggles and successes that have shaped my growth so far."
+                    "This first group project taught me more about real-world collaboration than any textbook could. The challenges we faced and overcame together were invaluable learning experiences."
                 </div>
-                
-                <p>This initial university experience has been transformative, teaching me that education extends far beyond the classroom. The skills I'm developing—both academic and personal—will serve me well throughout my career and life.</p>
             </section>
         </article>
     </main>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Charity Messe | Digital Portfolio</title>
+    <title>Projects - Charity Mese | Digital Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Google Fonts -->
@@ -149,7 +149,12 @@
         
         /* Page Header */
         .page-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: 
+                linear-gradient(135deg, rgba(74, 111, 165, 0.85), rgba(22, 96, 136, 0.9)),
+                url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
             padding: 8rem 0 4rem;
             text-align: center;
@@ -173,6 +178,19 @@
             padding: 4rem 0;
         }
         
+        .academic-work {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .academic-work h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -186,28 +204,28 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
         
         .project-image {
             height: 200px;
             overflow: hidden;
             position: relative;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
+        .project-image i {
+            font-size: 4rem;
+            color: white;
+            opacity: 0.8;
         }
         
         .project-content {
@@ -223,6 +241,27 @@
             color: var(--text-light);
             margin-bottom: 1rem;
             min-height: 80px;
+        }
+        
+        .project-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--light-color);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .status-planning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-in-progress {
+            background-color: #d1ecf1;
+            color: #0c5460;
         }
         
         .project-tags {
@@ -252,6 +291,7 @@
             display: flex;
             align-items: center;
             gap: 0.25rem;
+            font-size: 0.9rem;
         }
         
         .link:hover {
@@ -338,6 +378,38 @@
             transition: width 1s ease-in-out;
         }
         
+        /* Learning Goals */
+        .learning-goals {
+            background-color: rgba(79, 195, 161, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .learning-goals h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .goals-list {
+            list-style: none;
+        }
+        
+        .goals-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .goals-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--dark-color);
@@ -410,7 +482,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">Charity Messe</div>
+            <div class="logo">Charity Mese</div>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
                 <span></span>
@@ -423,7 +495,7 @@
                 <li><a href="reflection.html" class="nav-link">Reflection</a></li>
                 <li><a href="group-work.html" class="nav-link">Group Work</a></li>
                 <li><a href="projects.html" class="nav-link active">Projects</a></li>
-                 <li><a href="application_letter.html" class="nav-link">Application</a></li>
+                <li><a href="application.html" class="nav-link">Application</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -432,72 +504,75 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Skills & Projects</h1>
-            <p class="subtitle">Showcasing my technical abilities and data analytics projects</p>
+            <h1>Skills & Academic Work</h1>
+            <p class="subtitle">Developing foundational skills and preparing for future data analytics projects</p>
         </div>
     </section>
 
     <!-- Main Content -->
     <main class="container">
         <section class="article-section">
-            <h2>Featured Projects</h2>
+            <div class="academic-work">
+                <h3>My Academic Journey So Far</h3>
+                <p>As a first-year BIDA student at Botswana Accountancy College, I'm currently building the foundational knowledge and skills needed for data analytics. While I haven't completed major projects yet, I'm actively developing my abilities through coursework and preparing for future opportunities.</p>
+            </div>
+
+            <h2>Academic Work & Exercises</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Customer Segmentation Analysis">
+                        <i class="fas fa-chart-bar"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Customer Segmentation Analysis</h3>
-                        <p class="project-description">Implemented K-means clustering to segment retail customers based on purchasing behavior, enabling targeted marketing strategies.</p>
+                        <span class="project-status status-in-progress">In Progress</span>
+                        <h3>Data Analysis Fundamentals</h3>
+                        <p class="project-description">Learning basic data analysis techniques through coursework exercises and practical assignments in my BIDA program.</p>
                         <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Scikit-learn</span>
-                            <span class="tag">Pandas</span>
-                            <span class="tag">Matplotlib</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="link">Learn More →</a>
-                            <a href="#" class="link">View on GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Sales Forecasting Dashboard">
-                    </div>
-                    <div class="project-content">
-                        <h3>Sales Forecasting Dashboard</h3>
-                        <p class="project-description">Developed an interactive Power BI dashboard with time series forecasting to predict sales trends and support inventory planning.</p>
-                        <div class="project-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">DAX</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">Time Series</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="link">Learn More →</a>
-                            <a href="#" class="link">View Demo →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Botswana Retail Analytics">
-                    </div>
-                    <div class="project-content">
-                        <h3>Botswana Retail Analytics</h3>
-                        <p class="project-description">Analyzed local retail data to identify market trends and consumer patterns, providing insights for small business optimization.</p>
-                        <div class="project-tags">
-                            <span class="tag">R</span>
-                            <span class="tag">Tableau</span>
                             <span class="tag">Excel</span>
-                            <span class="tag">Statistical Analysis</span>
+                            <span class="tag">Basic Statistics</span>
+                            <span class="tag">Data Interpretation</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="link">Learn More →</a>
-                            <a href="#" class="link">View Report →</a>
+                            <a href="#" class="link">Course Materials →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-status status-in-progress">Completed</span>
+                        <h3>Kopano Enterprises Presentation</h3>
+                        <p class="project-description">Group presentation analyzing communication challenges and proposing solutions for a fictional company as part of ICT101 coursework.</p>
+                        <div class="project-tags">
+                            <span class="tag">Teamwork</span>
+                            <span class="tag">Communication</span>
+                            <span class="tag">Problem Solving</span>
+                            <span class="tag">Canva</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="reflection.html" class="link">View Reflection →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-status status-planning">Planning Phase</span>
+                        <h3>Python Learning Journey</h3>
+                        <p class="project-description">Developing programming fundamentals through Python exercises and preparing for data analysis applications in future coursework.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python Basics</span>
+                            <span class="tag">Programming Logic</span>
+                            <span class="tag">Problem Solving</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="link">Learning Resources →</a>
                         </div>
                     </div>
                 </div>
@@ -505,71 +580,51 @@
         </section>
 
         <section class="article-section">
-            <h2>Technical Skills</h2>
+            <h2>Technical Skills in Development</h2>
             <div class="skills-categories">
                 <div class="skill-section">
-                    <h4>Programming Languages</h4>
+                    <h4>Foundational Technical Skills</h4>
                     <div class="skill-list">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">R</span>
-                        <span class="skill-item">SQL</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">HTML/CSS</span>
+                        <span class="skill-item">Microsoft Excel</span>
+                        <span class="skill-item">Python Basics</span>
+                        <span class="skill-item">SQL Fundamentals</span>
+                        <span class="skill-item">Data Analysis</span>
+                        <span class="skill-item">Computer Literacy</span>
+                        <span class="skill-item">Canva</span>
+                        <span class="skill-item">PowerPoint</span>
                     </div>
                 </div>
 
                 <div class="skill-section">
-                    <h4>Data Analysis & Visualization</h4>
+                    <h4>Academic & Research Skills</h4>
                     <div class="skill-list">
-                        <span class="skill-item">Pandas</span>
-                        <span class="skill-item">NumPy</span>
-                        <span class="skill-item">Tableau</span>
-                        <span class="skill-item">Power BI</span>
-                        <span class="skill-item">Matplotlib</span>
-                        <span class="skill-item">Seaborn</span>
-                    </div>
-                </div>
-
-                <div class="skill-section">
-                    <h4>Tools & Platforms</h4>
-                    <div class="skill-list">
-                        <span class="skill-item">Jupyter Notebook</span>
-                        <span class="skill-item">Git/GitHub</span>
-                        <span class="skill-item">Excel</span>
-                        <span class="skill-item">Google Analytics</span>
-                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">Academic Writing</span>
+                        <span class="skill-item">Research Methods</span>
+                        <span class="skill-item">Citation & Referencing</span>
+                        <span class="skill-item">Critical Thinking</span>
+                        <span class="skill-item">Information Literacy</span>
                     </div>
                 </div>
 
                 <div class="skill-section">
                     <h4>Soft Skills</h4>
                     <div class="skill-list">
-                        <span class="skill-item">Problem Solving</span>
-                        <span class="skill-item">Team Collaboration</span>
                         <span class="skill-item">Communication</span>
-                        <span class="skill-item">Project Management</span>
+                        <span class="skill-item">Teamwork</span>
+                        <span class="skill-item">Time Management</span>
+                        <span class="skill-item">Problem Solving</span>
+                        <span class="skill-item">Adaptability</span>
                         <span class="skill-item">Critical Thinking</span>
-                        <span class="skill-item">Data Storytelling</span>
                     </div>
                 </div>
             </div>
             
             <!-- Skill Levels -->
             <div class="skill-levels">
-                <h3>Proficiency Levels</h3>
+                <h3>Current Skill Development</h3>
                 <div class="skill-bar">
                     <div class="skill-info">
-                        <span class="skill-name">Python & Data Analysis</span>
-                        <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" style="width: 85%"></div>
-                    </div>
-                </div>
-                
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span class="skill-name">SQL & Database Management</span>
+                        <span class="skill-name">Microsoft Office Suite</span>
                         <span class="skill-percentage">80%</span>
                     </div>
                     <div class="skill-progress">
@@ -579,7 +634,7 @@
                 
                 <div class="skill-bar">
                     <div class="skill-info">
-                        <span class="skill-name">Data Visualization (Tableau/Power BI)</span>
+                        <span class="skill-name">Academic Research & Writing</span>
                         <span class="skill-percentage">75%</span>
                     </div>
                     <div class="skill-progress">
@@ -589,7 +644,7 @@
                 
                 <div class="skill-bar">
                     <div class="skill-info">
-                        <span class="skill-name">Statistical Analysis</span>
+                        <span class="skill-name">Teamwork & Collaboration</span>
                         <span class="skill-percentage">70%</span>
                     </div>
                     <div class="skill-progress">
@@ -599,22 +654,51 @@
                 
                 <div class="skill-bar">
                     <div class="skill-info">
-                        <span class="skill-name">Machine Learning Fundamentals</span>
-                        <span class="skill-percentage">65%</span>
+                        <span class="skill-name">Python Programming</span>
+                        <span class="skill-percentage">40%</span>
                     </div>
                     <div class="skill-progress">
-                        <div class="skill-progress-bar" style="width: 65%"></div>
+                        <div class="skill-progress-bar" style="width: 40%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-name">Data Analysis Concepts</span>
+                        <span class="skill-percentage">35%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" style="width: 35%"></div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Learning Goals -->
+        <section class="learning-goals">
+            <h3>Learning Goals for Year 1</h3>
+            <ul class="goals-list">
+                <li>Master foundational Python programming concepts for data analysis</li>
+                <li>Develop proficiency in Excel for basic data manipulation and analysis</li>
+                <li>Understand database fundamentals and basic SQL queries</li>
+                <li>Improve academic writing and research skills</li>
+                <li>Build strong teamwork and communication abilities</li>
+                <li>Complete first data analysis project by end of first year</li>
+                <li>Develop professional portfolio with academic work</li>
+            </ul>
+        </section>
     </main>
 
     <!-- Footer -->
-   <footer>
+    <footer>
         <div class="container">
             <p>&copy; 2025 Charity Messe. All rights reserved.</p>
             <p>BSc Business Intelligence & Data Analytics | Botswana Accountancy College</p>
+            <div class="footer-links">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
