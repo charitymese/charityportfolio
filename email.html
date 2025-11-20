@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Letter - Charity Mese | Digital Portfolio</title>
+    <title>Email Template - Charity Messe | Digital Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Google Fonts -->
@@ -11,8 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     
-     <link rel="shortcut icon" href="img/3.jpg" type="image/x-icon">
-
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -153,7 +151,7 @@
         .page-header {
             background: 
                 linear-gradient(135deg, rgba(74, 111, 165, 0.85), rgba(22, 96, 136, 0.9)),
-                url('https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+                url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -175,12 +173,12 @@
             margin: 0 auto;
         }
         
-        /* Application Letter Section */
-        .application-section {
+        /* Email Section */
+        .email-section {
             padding: 4rem 0;
         }
         
-        .letter-container {
+        .email-container {
             max-width: 800px;
             margin: 0 auto;
             background-color: white;
@@ -189,73 +187,105 @@
             border-radius: 8px;
         }
         
-        .letter-header {
+        .email-header {
             text-align: center;
             margin-bottom: 2rem;
         }
         
-        .letter-header h2 {
+        .email-header h2 {
             color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
         
-        .letter-header p {
+        .email-header p {
             color: var(--text-light);
             font-style: italic;
         }
         
-        .letter-content {
+        .email-content {
             line-height: 1.8;
+            font-family: 'Open Sans', sans-serif;
         }
         
-        .sender-address {
+        .email-meta {
             margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         
-        .sender-address p {
+        .email-meta p {
             margin-bottom: 0.25rem;
         }
         
-        .date {
-            margin-bottom: 2rem;
-            text-align: right;
+        .email-subject {
+            font-weight: 600;
+            color: var(--dark-color);
         }
         
-        .recipient-address {
-            margin-bottom: 2rem;
-        }
-        
-        .recipient-address p {
-            margin-bottom: 0.25rem;
-        }
-        
-        .salutation {
-            margin-bottom: 1rem;
-        }
-        
-        .letter-body {
+        .email-body {
             margin-bottom: 2rem;
         }
         
-        .letter-body p {
+        .email-body p {
             margin-bottom: 1rem;
             text-align: justify;
         }
         
-        .closing {
-            margin-top: 3rem;
+        .attachments {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: var(--light-color);
+            border-radius: 4px;
         }
         
-        .signature {
-            margin-top: 3rem;
+        .attachments h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
         }
         
-        .signature p {
+        .attachments-list {
+            list-style: none;
+            margin-left: 1rem;
+        }
+        
+        .attachments-list li {
+            padding: 0.25rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .attachments-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .email-closing {
+            margin-top: 2rem;
+        }
+        
+        .email-signature {
+            margin-top: 2rem;
+        }
+        
+        .email-signature p {
             margin-bottom: 0.25rem;
         }
         
+        .signature-name {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .signature-details {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
         /* Action Buttons */
-        .letter-actions {
+        .email-actions {
             display: flex;
             gap: 1rem;
             justify-content: center;
@@ -293,6 +323,38 @@
             background-color: #3da98a;
         }
         
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Copy Functionality */
+        .copy-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .copy-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--dark-color);
@@ -316,7 +378,7 @@
         
         /* Print Styles */
         @media print {
-            .navbar, .page-header, .letter-actions, footer {
+            .navbar, .page-header, .email-actions, footer {
                 display: none;
             }
             
@@ -324,11 +386,11 @@
                 background-color: white;
             }
             
-            .application-section {
+            .email-section {
                 padding: 0;
             }
             
-            .letter-container {
+            .email-container {
                 box-shadow: none;
                 padding: 0;
             }
@@ -370,11 +432,11 @@
                 padding: 7rem 0 3rem;
             }
             
-            .letter-container {
+            .email-container {
                 padding: 1.5rem;
             }
             
-            .letter-actions {
+            .email-actions {
                 flex-direction: column;
                 align-items: center;
             }
@@ -388,7 +450,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">Charity</div>
             <div class="nav-toggle" id="navToggle">
@@ -413,87 +475,83 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Application Letter</h1>
-            <p class="subtitle">Professional industrial attachment application template</p>
+            <h1>Email Template</h1>
+            <p class="subtitle">Professional email template for industrial attachment inquiries</p>
         </div>
     </section>
 
-    <!-- Application Letter Section -->
-    <section class="application-section">
+    <!-- Email Section -->
+    <section class="email-section">
         <div class="container">
-            <div class="letter-container">
-                <div class="letter-header">
-                    <h2>APPLICATION LETTER</h2>
-                    <p>Below is an application letter showcasing a request for industrial attachment.</p>
+            <div class="email-container">
+                <div class="email-header">
+                    <h2>PROFESSIONAL EMAIL TEMPLATE</h2>
+                    <p>Ready-to-use email template for industrial attachment applications</p>
                 </div>
 
-                <div class="letter-content">
-                    <div class="sender-address">
-                        <p><strong>CHARITY MESE</strong></p>
-                        <p>FRANCISTOWN, BOTSWANA</p>
-                        <p>P.O. BOX 70728 GABORONE</p>
-                        <p>charity.messe@student.bac.ac.bw</p>
-                        <p>+267 74 492 715</p>
+                <div class="email-content">
+                    <div class="email-meta">
+                        <p><span class="email-subject">Subject:</span> Industrial Attachment Inquiry – Thato Charity Mese, BSc Business Intelligence and Data Analytics</p>
                     </div>
 
-                    <div class="date">
-                        <p>25 OCTOBER 2025</p>
-                    </div>
-
-                    <div class="recipient-address">
-                        <p><strong>THE HUMAN RESOURCE MANAGER</strong></p>
-                        <p>DEBSWANA</p>
-                        <p>PLOT 64288, AIRPORT ROAD, BLOCK 8</p>
-                        <p>GABORONE, BOTSWANA</p>
-                        <p>P.O. BOX 329 GABORONE</p>
-                    </div>
-
-                    <div class="salutation">
-                        <p><strong>Dear Sir/Madam,</strong></p>
-                    </div>
-
-                    <div class="letter-body">
-                        <p><strong>Re: Application for Industrial Attachment</strong></p>
+                    <div class="email-body">
+                        <p>Dear Hiring Manager,</p>
                         
-                        <p>I am currently a first-year student pursuing a Bachelor's Degree in Business Intelligence and Data Analytics at Botswana Accountancy College. I write to express my interest in an industrial attachment opportunity with your organization.</p>
+                        <p>My name is Thato Charity Mese, and I am a penultimate year student pursuing BSc in Business Intelligence and Data Analytics at the Botswana Accountancy College. I am writing to express my profound interest in a Data Analyst Industrial attachment opportunity with Debswana Mining Company for the July – December 2027 attachment cycle.</p>
                         
-                        <p>I am eager to gain hands-on experience in data analysis, business intelligence systems, and ICT operations. My coursework has equipped me with foundational knowledge in data analytics tools, business computing, and communication skills, which I am ready to apply in a professional environment.</p>
+                        <p>I have long admired Debswana's pivotal role in Botswana's economy and its commitment to operational excellence, safety and innovation. I am particularly drawn to how data driven decision making can optimize mining operations, enhance resource efficiency and optimize mining operation, enhance resource efficiency and improve safety metrics. I am eager to contribute my foundational skills in Data analysis, Python, SQL and data visualisation to support your team in transforming operational data into actionable insights.</p>
                         
-                        <p>I am a fast learner, dedicated, and willing to contribute to your data analytics or ICT team while simultaneously developing my technical and problem-solving skills. I am confident that my attachment with your company would be mutually beneficial, allowing me to apply my academic knowledge while contributing to your organization's objectives.</p>
+                        <div class="attachments">
+                            <h4>Attached for your review are:</h4>
+                            <ul class="attachments-list">
+                                <li>My Curriculum Vitae (CV), Detailing my academic projects and technical skills</li>
+                                <li>A formal application letter, further elaborating on my motivation</li>
+                            </ul>
+                        </div>
                         
-                        <p>I would appreciate the opportunity to discuss how I can add value to your organization during my attachment period. Thank you for your time and consideration.</p>
+                        <p>I am confident that my analytical mindset, passion for data and strong academic background would allow me to contribute meaningfully to your esteemed organization. I am available for an interview at your lates convenience to discuss my application further.</p>
+                        
+                        <div class="email-closing">
+                            <p>Thank you for your time and consideration.</p>
+                        </div>
                     </div>
 
-                    <div class="closing">
-                        <p><strong>Yours faithfully,</strong></p>
-                    </div>
-
-                    <div class="signature">
-                        <p><strong>Charity Messe</strong></p>
-                        <p>BSc Business Intelligence & Data Analytics Student</p>
-                        <p>Botswana Accountancy College</p>
+                    <div class="email-signature">
+                        <p class="signature-name">Sincerely,</p>
+                        <p class="signature-name">Thato Charity Mese</p>
+                        <p class="signature-details">FBDA25-011</p>
+                        <p class="signature-details">fbda25-001@thuto.bac.ac.bw</p>
+                        <p class="signature-details">+267 74491715</p>
                     </div>
                 </div>
 
-                <div class="letter-actions">
-                    <button class="btn btn-primary" onclick="window.print()">
-                        <i class="fas fa-print"></i> Print Letter
+                <div class="email-actions">
+                    <button class="btn btn-primary" id="copyEmail">
+                        <i class="fas fa-copy"></i> Copy Email Text
                     </button>
-                    <a href="cv.html" class="btn">
-                        <i class="fas fa-file-alt"></i> View CV
+                    <button class="btn" onclick="window.print()">
+                        <i class="fas fa-print"></i> Print Email
+                    </button>
+                    <a href="application.html" class="btn btn-outline">
+                        <i class="fas fa-file-alt"></i> View Application Letter
                     </a>
-                    <a href="contact.html" class="btn">
-                        <i class="fas fa-envelope"></i> Contact Me
+                    <a href="cv.html" class="btn btn-outline">
+                        <i class="fas fa-user"></i> View CV
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Copy Notification -->
+    <div class="copy-notification" id="copyNotification">
+        <i class="fas fa-check-circle"></i> Email text copied to clipboard!
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Charity Mese. All rights reserved.</p>
+            <p>&copy; 2025 Charity Messe. All rights reserved.</p>
             <p>BSc Business Intelligence & Data Analytics | Botswana Accountancy College</p>
             <div class="footer-links">
                 <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -519,14 +577,45 @@
             });
         });
         
-        // Print functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const printButton = document.querySelector('.btn-primary');
-            if (printButton) {
-                printButton.addEventListener('click', function() {
-                    window.print();
-                });
-            }
+        // Copy email text functionality
+        const copyEmailBtn = document.getElementById('copyEmail');
+        const copyNotification = document.getElementById('copyNotification');
+        
+        copyEmailBtn.addEventListener('click', function() {
+            const emailText = `Subject: Industrial Attachment Inquiry – Thato Charity Mese, BSc Business Intelligence and Data Analytics.
+
+Dear Hiring Manager,
+
+My name is Thato Charity Mese, and I am a penultimate year student pursuing BSc in Business Intelligence and Data Analytics at the Botswana Accountancy College. I am writing to express my profound interest in a Data Analyst Industrial attachment opportunity with Debswana Mining Company for the July – December 2027 attachment cycle.
+
+I have long admired Debswana's pivotal role in Botswana's economy and its commitment to operational excellence, safety and innovation. I am particularly drawn to how data driven decision making can optimize mining operations, enhance resource efficiency and optimize mining operation, enhance resource efficiency and improve safety metrics. I am eager to contribute my foundational skills in Data analysis, Python, SQL and data visualisation to support your team in transforming operational data into actionable insights.
+
+Attached for your review are:
+1. My Curriculum Vitae (CV), Detailing my academic projects and technical skills.
+2. A formal application letter, further elaborating on my motivation.
+
+I am confident that my analytical mindset, passion for data and strong academic background would allow me to contribute meaningfully to your esteemed organization. I am available for an interview at your lates convenience to discuss my application further.
+
+Thank you for your time and consideration.
+
+Sincerely,
+Thato Charity Mese
+FBDA25-011
+fbda25-001@thuto.bac.ac.bw
++267 74491715`;
+            
+            navigator.clipboard.writeText(emailText).then(function() {
+                // Show notification
+                copyNotification.classList.add('show');
+                
+                // Hide notification after 3 seconds
+                setTimeout(function() {
+                    copyNotification.classList.remove('show');
+                }, 3000);
+            }).catch(function(err) {
+                console.error('Failed to copy text: ', err);
+                alert('Failed to copy email text. Please select and copy manually.');
+            });
         });
     </script>
 </body>
